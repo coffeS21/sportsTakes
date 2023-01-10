@@ -1,6 +1,6 @@
 const express = require("express")
 const takeRouter = express.Router()
-const Take = require("../models/take.js")
+const Take = require("../models/take")
 
 //go to eps #9 for testing instructions
 //create templets and create:
