@@ -5,7 +5,7 @@ import ProtectedRoute from "./components/protectedRoutes/ProtectedRoute"
 import Nav from "./components/appDir/Nav"
 import ProfilePage from "./Pages/authDir/ProfilePage"
 import LoginPage from "./Pages/authDir/LoginPage"
-
+import HotTakesPage from "./Pages/takeDir/publicTakesDir/HotTakesPage"
 export default function App(props){
    const {token,
           signup,
@@ -16,7 +16,7 @@ export default function App(props){
           deleteAccount,
           ...newUserState
   }= useContext(UserContext)
-  console.log(user)
+  console.log(newUserState)
  
   return (
     <div className="app">
@@ -45,8 +45,19 @@ export default function App(props){
             </ProtectedRoute>
           }
         />
+        <Route 
+          path="/hotTakesPage" 
+          element={
+            <ProtectedRoute token={token} redirectTo="/">
+              <HotTakesPage 
+                publicTakes={newUserState.allTakes}
+               />
+            </ProtectedRoute>
+          }
+        />
       
       </Routes>
     </div>
   )
 }
+/** */

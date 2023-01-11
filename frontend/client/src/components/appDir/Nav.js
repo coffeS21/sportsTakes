@@ -14,6 +14,9 @@ export default function Navbar(props){
         <Link className="navLikinks" to="/profilePage">
           <button className="button-30">profile page</button>
         </Link>
+        <Link className="navLikinks" to="/hotTakesPage">
+          <button className="button-30">hot takes page</button>
+        </Link>
       </div>
        
     </div>

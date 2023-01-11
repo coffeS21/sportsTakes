@@ -1,15 +1,10 @@
 import React from 'react'
 
-
-
-
 export default function ProfilePage(props){
   const {logout, deleteAccount, username, _id} = props
-
   function remove(){
     deleteAccount(_id)
   }
-
   return (
     <div id="profilePageContainer">
       <div id="profileInfoContainer">
