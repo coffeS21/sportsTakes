@@ -6,6 +6,7 @@ import Nav from "./components/appDir/Nav"
 import ProfilePage from "./Pages/authDir/ProfilePage"
 import LoginPage from "./Pages/authDir/LoginPage"
 import HotTakesPage from "./Pages/takeDir/publicTakesDir/HotTakesPage"
+import MyTakesPage from "./Pages/takeDir/myTakesDir/MyTakesPage"
 export default function App(props){
    const {token,
           signup,
@@ -51,6 +52,16 @@ export default function App(props){
             <ProtectedRoute token={token} redirectTo="/">
               <HotTakesPage 
                 publicTakes={newUserState.allTakes}
+               />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/myTakesPage" 
+          element={
+            <ProtectedRoute token={token} redirectTo="/">
+              <MyTakesPage 
+                myTakes={newUserState.takes}
                />
             </ProtectedRoute>
           }
